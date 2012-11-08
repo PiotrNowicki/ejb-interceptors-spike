@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="3.1"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd">
+
+	<interceptors>
+		<interceptor>
+			<interceptor-class>com.piotrnowicki.interceptors.control.SpikeInterceptor</interceptor-class>
+		</interceptor>
+	</interceptors>
+
+
+	<assembly-descriptor>
+		<interceptor-binding>
+			<ejb-name>*</ejb-name>
+			<interceptor-class>com.piotrnowicki.interceptors.control.SpikeInterceptor</interceptor-class>
+		</interceptor-binding>
+
+		<!-- Uncomment if you want to have bean / method - level precise interceptors 
+			switch -->
+
+		<!-- <interceptor-binding> -->
+		<!-- <ejb-name>CustomerService</ejb-name> -->
+		<!-- <interceptor-class>com.piotrnowicki.interceptors.control.SpikeInterceptor</interceptor-class> -->
+		<!-- </interceptor-binding> -->
+	</assembly-descriptor>
+</ejb-jar>
